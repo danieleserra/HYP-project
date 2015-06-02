@@ -1,0 +1,248 @@
+#map-canvas{
+      display:block;
+      position: relative;
+      margin-top: 10px;
+      height:400px;
+      width:100%;
+}
+
+
+.header-logo{
+	padding-top:36px;
+	padding-bottom:85px;
+    position: relative;
+    z-index: 1;
+	
+	}
+
+.logodietro{
+	position:fixed;
+    z-index: 0;
+	margin-left:23%;
+	background:url(../images/logo2.png);
+	height:300px;
+	width:700px;
+	}
+
+
+.sfondo{
+	background-color:#0072bc;
+    z-index: 1;
+    width:100%;
+	}
+	
+.sfondobianco{
+	background-color:#ffffff;
+    z-index: 4;
+	width=:100%;
+	position:relative;
+  	padding-top: 0px;
+  	padding-left: 0px;
+  	padding-right: 0px;
+    display:table;
+	}
+	
+.menusinistra{
+	background-color:#f6f7f8;
+	position:relative;
+  	padding-top: 0px;
+  	padding-left: 0px;
+	margin-bottom:0px;
+	width:25%;
+    border:0px;
+    left:0px;
+    font-family:fantasy;
+  	vertical-align: top; /* assicura la copertura del testo dall'alto */
+    display:table-cell;
+    border-right:2px solid #757575;
+	}
+    
+.contenitore{
+
+	position:relative;
+    display:table-cell;
+	padding-left: 20px;
+	padding-top: 263px; /*243 è il banner*/
+	padding-right: 20px;
+	border-top:30px solid #7da7d9;
+	width: 75%;
+	}
+    
+.categorie{
+	position:relative;
+    width: 80%;
+	height:520px;
+	}
+    
+.banner{
+	position:absolute;
+    width: 75%;
+    margin-right:0px;
+    padding-right:0px;
+    padding-left:0px;
+    padding-top:30px;
+    display:table-cell;
+    background-color:#7da7d9;
+	border-right:70px solid #e12b38;
+	}
+    
+ .course{
+    background-color:#efefef;
+    border: 1px solid #d8d8d8;
+    width:100%;
+    height:150px;
+    margin-bottom:10px;
+}
+
+.headerline{
+	position: relative;
+	padding-right:30px;
+	margin-top:50px;
+	padding-left:100px;
+	padding-top:10px;
+	padding-bottom:10px;
+    width:100px%;
+    background-color:#efefef;
+    font-family: 'Chewy', cursive;
+	font-size: 52px;
+    background-image: url(http://hyp.altervista.org/images/icons.png);
+    background-position: right;
+    background-repeat: no-repeat;
+    }
+.riquadro{   /*tabella arrotondata */
+	border-radius: 40px;
+    background: #D9E5F3;	
+    border: 4px solid #5AB6E3;
+    padding-right: 40px; 
+    padding-left: 40px; 
+    padding-top: 30px; 
+    width: 265px;
+    height: 130px; 
+    margin-left: 60%;
+    position:absolute;
+    margin-top:12px;
+}
+
+.contenitore-dinamico{
+    width:100%; position: relative;
+    margin-top: 80px;
+    text-align: center;
+}
+
+.insegnanti{ 
+    
+    display:inline-block;
+    width:auto;
+    text-align: center;
+    margin: 20px;
+    padding: 5px;
+    height: 200px;
+    
+    vertical-align: top;
+  	 /*tutti allineati superiormente*/
+            }
+
+.category{ 
+    
+    display:inline-block;
+    width:45%;
+    text-align: center;
+    margin: 20px;
+    padding: 5px;
+    height: 200px;
+    
+    vertical-align: top;
+  	 /*tutti allineati superiormente*/
+            }
+        
+.ins_name{
+    text-align: center;
+	color:#60A8D5;
+	font-size: 22px; font-family: sans-serif;
+    font-weight: normal;
+    width: 150px;
+    margin: 20px;
+}
+
+.desc{
+    text-align: center;
+	color:#60A8D5;
+    padding-top: 17px;
+	font-size: 14px; font-family: sans-serif;
+    font-weight: normal;
+    width: 400px;
+    margin: 20px;
+    display:inline-block;
+    vertical-align: top;
+}
+.twitter{
+background-image: url(http://guifff.com/wp-content/uploads/45_dribbble-twitter.gif);
+    background-position: center; 
+    margin-top: 210px;
+    margin-left: 10%;
+position: relative;
+    width: 800px;
+    height: 270px;
+    padding-left: 230px;
+    padding-top: 0px;   
+
+}
+.goback{
+    position: relative;
+	background: #2b8ee3;
+	color: #2b8ee3;
+    width: 100px;
+	height: 100px;
+	margin: 0 75px;
+}
+.barrainbasso{
+    position: fixed;
+    bottom: 0px;
+	background: #0880e8;
+    width: 100%;
+	height: 60px;
+	opacity: 0.5;
+    border-top-style: solid;
+    border-top-color: #003d72;
+}
+.link{
+	color: #ffffff;
+    position: relative;
+    display: inline-block;
+    margin-left: 10%;
+    font-size: 20px;
+    padding-top: 16px;
+    width: 300px;
+    height: 50px;
+    text-align: center;
+}
+
+.link a:active{
+	color: #ffffff;
+	background-color: #0880e8;
+    font-style: normal; /*toglie la sottolineatura*/
+    text-decoration: none;
+    
+}
+.link a:link{
+	color: #ffffff;
+	background-color: #0880e8;
+    font-style: normal; /*toglie la sottolineatura*/
+    text-decoration: none;
+    
+}
+.link a:visited{
+	color: #ffffff;
+	background-color: #0880e8;
+    font-style: normal; /*toglie la sottolineatura*/
+    text-decoration: none;
+    
+}
+.link a:hover{
+	color: #ffffff;
+	background-color: #3b43ff;
+    font-style: normal; /*toglie la sottolineatura*/
+    text-decoration: none;
+    text-transform: uppercase;
+    
+}
