@@ -40,6 +40,12 @@
 
 
  function loadScript() {
+        if (window.google){  
+            initialize(); 
+            console.log("dfdf");
+            return;
+        }
+            console.log("dfdf1111111");
      var script = document.createElement('script');
         script.setAttribute('id', 'scriptmappa');
         script.type = 'text/javascript';

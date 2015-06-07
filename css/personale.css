@@ -80,9 +80,9 @@ width: 100% !important;
 .contenitore{
   	padding-top: 0px;
   	padding-left: 0px;
-	margin-bottom:0px;
+	margin-bottom: 10px;
 	padding-left: 20px;
-	padding-top: 20px;
+	padding-top: 2px;
 	padding-right: 20px;
 	width: 100%;
     display: inline-block;
@@ -357,6 +357,7 @@ background-image: url(http://guifff.com/wp-content/uploads/45_dribbble-twitter.g
         bottom: 0px;
         background: #0880e8;
         width: 100%;
+        margin: 0px;
         height: auto;
         opacity: 0.5;
         border-top-style: solid;

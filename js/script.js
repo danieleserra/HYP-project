@@ -9,8 +9,7 @@
               $("#cat").on("click",loadCategories);
               $("#level").on("click",loadbyLevel);
               $("#alpha").on("click",loadAlphabetical);
-             
-
+            
         } 
 
 function disableClick(){
@@ -27,14 +26,13 @@ function loadHome(){
         $('.contenitoredestra').load(document.URL +  ' .contenitoredestra');
         $('.scorrimentoslide').load(document.URL +  ' .scorrimentoslide');
         $( ".scorrimentoslide" ).show();
+        $(document).on("click", ".featurette#courses", loadCategories);
 }
-
 
 function loadLocation(){
     
         $( ".scorrimentoslide" ).fadeOut( "slow" );
         $( ".banner" ).fadeOut( "slow" );
-        window.onload = loadScript(); //Carica la mappa
     
         $(".contenitoredestra").html(
             "<div class=\"headerline\">Location & Overall Scheduling</div> "+
@@ -62,35 +60,48 @@ function loadLocation(){
         $(document).on("click", "#contact", loadContact);
         $(".barrainbasso").hide();
         $(".barrainbasso").fadeIn(1000);
+    
+        window.onload = loadScript(); //Carica la mappa
                               
 }
 
 function loadContact(){
     
-    $(document).on("click", "#back", loadLocation);
+    $(document).on("click", "#location", loadLocation);
     $(".contenitoredestra").html(
-            "<div class=\"headerline\"><a href=\"#back\" id=\"back\">Location & Overall Scheduling </a><<<br> Contact us</div> "+
+            "<div class=\"headerline\"><a href=\"#back\" id=\"location\">Location & Overall Scheduling </a><<<br>Contact us</div> "+
 
-                "<div class=\"contenitore-dinamico\">"+
-                "<div class=\"riquadroIndirizzo\"><b>Big Gym</b><br>1020 Waso St Hood River,<br>MI 97031</div>"+
+                "<div class=\"contenitore-dinamico\" style=\"width:88%\">"+
+                "<form>"+
+                "First name: "+
+                "<input type=\"text\" name=\"firstname\" size=\"20\">&nbsp;&nbsp;"+
+                "Last name: "+
+                "<input type=\"text\" name=\"lastname\" size=\"20\"><br>"+
+                "<br><br>Email: "+
+                "<input type=\"text\" name=\"email\" size=\"25\">"+
+                "<form>"+
+                "&nbsp;&nbsp;<input type=\"radio\" name=\"sex\" value=\"male\" checked>&nbsp;&nbsp;Male"+
+               
+                "&nbsp;&nbsp;<input type=\"radio\" name=\"sex\" value=\"female\">&nbsp;&nbsp;Female"+
+                "</form>"+
+                "<br><br>City:  "+
+                "<input type=\"text\" name=\"city\">&nbsp;&nbsp;"+
+                "ZIP Code: "+
+                "<input type=\"text\" name=\"zip\" size=\"7\"><br><br>"+
+                
+                "<textarea name=\"message\" rows=\"10\" cols=\"45\" onfocus=\"clearContents(this);\">Your message</textarea>"+
+                
+                "<br><br><br><input type=\"submit\" value=\"Submit\">"+
+                "</form></div><br><br><br><br>"+
 
-                "<table id=\"table\">"+
-                "  <tr>"+
-                "    <th colspan=\"2\">Overall Schedule</th>"+
-                "  </tr>"+
-                "  <tr>"+
-                "    <td>Mon - Fri</td>"+
-                "    <td>6:00 am - 11:00 pm</td>"+
-                "  </tr>"+
-                "  <tr class=\"alt\">"+
-                "    <td>Sat & Sun</td>"+
-                "    <td>7:00 am - 7:00 pm</td>"+
-                "  </tr>"+
-                "</table></div><br><br><br><br>"+
-
-                "<div class=\"barrainbasso\"><div class=\"link\"><a href=\"#location\">Where</a></div><div class=\"link\"><b>Contact</b></div></div>");            
+                "<div class=\"barrainbasso\"><div class=\"link\"><a href=\"#location\">Where</a></div><div class=\"link\"><b>Contact</b></div></div>");   
+    
+    
 }
 
+function clearContents(element) {
+        element.value = '';
+    }
 
 function loadInstructors(){
     $( ".scorrimentoslide" ).fadeOut( "slow" );
