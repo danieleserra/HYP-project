@@ -3,6 +3,7 @@
 //connection to db
 $mysqli = new mysqli("localhost", "root", "", "my_hyp");
 
+header("Access-Control-Allow-Origin: *");
 if (mysqli_connect_errno()) { //verify connection
     exit(); //do nothing else 
 }

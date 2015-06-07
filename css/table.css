@@ -4,11 +4,11 @@
     width: 300px;
     border-collapse: collapse;
     border-left: 10%;
-    position:absolute;
+    position: relative;
     padding-top:40px;
+    margin-top:0px;
     margin-left:10%;
-    margin-top:37px;
-    
+    display: inline-block;
 }
 
 #table td, #table th {

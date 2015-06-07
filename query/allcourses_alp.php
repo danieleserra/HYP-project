@@ -1,6 +1,7 @@
 <?php
 //get all the course from db and reply using json structure
 //connection to db
+header("Access-Control-Allow-Origin: *");
 $mysqli = new mysqli("localhost", "root", "", "my_hyp");
 
 if (mysqli_connect_errno()) { //verify connection

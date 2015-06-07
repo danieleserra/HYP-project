@@ -1,5 +1,8 @@
 <?php
-$id = $_POST['id'];
+$i = $_POST['id'];
+$i = $i+1;
+
+header("Access-Control-Allow-Origin: *");
 //get all the course from db and reply using json structure
 //connection to db
 $mysqli = new mysqli("localhost", "root", "", "my_hyp");
@@ -9,7 +12,7 @@ if (mysqli_connect_errno()) { //verify connection
 }
 else {
     # extract results mysqli_result::fetch_array
-    $query = " SELECT * FROM course WHERE course_category='$id'";
+    $query = " SELECT * FROM course WHERE course_category='$i'";
     //query execution
     $result = $mysqli->query($query);
     //if there are data available
