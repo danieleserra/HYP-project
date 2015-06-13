@@ -89,7 +89,7 @@ function loadContact(){
                 "ZIP Code: "+
                 "<input type=\"text\" name=\"zip\" size=\"7\"><br><br>"+
                 
-                "<textarea name=\"message\" rows=\"10\" cols=\"45\" onfocus=\"clearContents(this);\">Your message</textarea>"+
+                "<textarea name=\"message\" style=\"width: 60%; height: 150px;\" onfocus=\"clearContents(this);\">Your message</textarea>"+
                 
                 "<br><br><br><input type=\"submit\" value=\"Submit\">"+
                 "</form></div><br><br><br><br>"+
