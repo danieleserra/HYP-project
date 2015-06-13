@@ -1,16 +1,24 @@
-        $(document).ready(ready);
+$(document).ready(ready);
 
-        function ready(){
-              loadHome();
-              $(".navbar-brand#home1").on("click",loadHome);
-              $(".home").on("click",loadHome);
-              $("#loc").on("click", loadLocation);
-              $("#ins").on("click", loadInstructors);
-              $("#cat").on("click",loadCategories);
-              $("#level").on("click",loadbyLevel);
-              $("#alpha").on("click",loadAlphabetical);
-            
-        } 
+function ready(){
+         loadHome();
+         $(".navbar-brand#home1").on("click",loadHome);
+         $(".home").on("click",loadHome);
+         $("#loc").on("click", loadLocation);
+         $("#ins").on("click", loadInstructors);
+         $("#cat").on("click",loadCategories);
+         $("#level").on("click",loadbyLevel);
+         $("#alpha").on("click",loadAlphabetical); 
+
+}
+//Il menu a tendina ritorna su
+function goup(){
+      $('.nav a').on('click', function(){
+            if ( $(window).width() < 750 ) {
+                $(".navbar-toggle").click()
+            }
+      });
+}      
 
 function disableClick(){
  $(document).off("click");
@@ -21,6 +29,7 @@ function disableClick(){
 }
 
 function loadHome(){	
+		goup();
         $( ".scorrimentoslide" ).fadeIn("slow");
         //Ripristina il vecchio div dell'homepage in index.html 
         $('.contenitoredestra').load(document.URL +  ' .contenitoredestra');
@@ -30,7 +39,7 @@ function loadHome(){
 }
 
 function loadLocation(){
-    
+    	goup();
         $( ".scorrimentoslide" ).fadeOut( "slow" );
         $( ".banner" ).fadeOut( "slow" );
     
@@ -98,12 +107,13 @@ function loadContact(){
     
     
 }
-
+//textarea pulita appena ci clicco
 function clearContents(element) {
         element.value = '';
     }
 
 function loadInstructors(){
+	goup();
     $( ".scorrimentoslide" ).fadeOut( "slow" );
     $( ".banner" ).fadeOut( "slow" );    
     $(".contenitoredestra").html("<div class=\"headerline\">Instructors</div><div class='contenitore-dinamico'></div>"); 
@@ -195,7 +205,7 @@ function loadSingleIns(){
 }
 
 function loadCategories(){
-    
+    goup();
     $( ".scorrimentoslide" ).fadeOut( "slow" );
     $(".contenitoredestra").html("<div class=\"headerline\">Course Categories</div><div class=\"contenitore-dinamico\"></div>");
     
@@ -227,6 +237,7 @@ function loadCategories(){
 
 
 function loadSingleCategory(){
+	goup();
     i = this.id.replace('i',''); //tolto la i iniziale da ID
     $( ".scorrimentoslide" ).fadeOut( "slow" );
     disableClick();
@@ -234,7 +245,6 @@ function loadSingleCategory(){
      $(".categoria").html("");
      $(".sfondocategorie").html("");
      $(".desc").html("");
-    $(".contenitoredestra").html("");
      $(".contenitore-dinamico").html("");
     
     $(".contenitoredestra").html("<div class=\"headerline\"><a href='#' id='categorie'>All categories <<</a></div>");
@@ -250,7 +260,7 @@ function loadSingleCategory(){
                 var coursecategory=JSON.parse(response);
                 i=i-1;
                 var el="";
-                el="<style>.contenitore-dinamico{text-align: left;}.sfondocategorie{background-image: url("+coursecategory[i].sfondo+");    background-position: top; width:100%; height: 900px; margin-top: 0px; margin-left: 0px; margin-right: 0px;  background-repeat: no-repeat;opacity: 0.3;position: relative;}</style><div class='contenitore-dinamico'><div class='sfondocategorie'></div><div class='categoria' id='i"+coursecategory[i].id+"'><div class='desc'><style>.desc{width:100%;color:#000000;text-align: center;}</style><b><p style='font-size:45px'>"+coursecategory[i].title+"</b></p><br><br><p style='font-size:18px'>"+coursecategory[i].desc+"</p></div></div>";   
+                el="<style>.contenitore-dinamico{text-align: left;}.sfondocategorie{background-image: url("+coursecategory[i].sfondo+");    background-position: top; width:98%; height: 900px; margin-top: 0px; margin-left: 0px; margin-right: 0px;  background-repeat: no-repeat;opacity: 0.3;position: relative;}</style><div class='contenitore-dinamico'><div class='sfondocategorie'></div><div class='categoria' id='i"+coursecategory[i].id+"'><div class='desc'><style>.desc{width:98%;color:#000000;text-align: center; margin: 0px}</style><b><p style='font-size:45px'>"+coursecategory[i].title+"</b></p><br><br><p style='font-size:18px'>"+coursecategory[i].desc+"</p></div></div>";   
                $(".contenitoredestra").append(el);
 
             },
@@ -270,7 +280,7 @@ function loadSingleCategory(){
         success: function(response) {
             var course=JSON.parse(response);
             var el="";
-			for(var j=0;j<JSON.parse(response).length;j++){
+			for(var j=0;j<course.length;j++){
                 $(document).on("click", "#corso"+course[j].id, loadSingleCourse);
                 el+="<br><a href='#' id='corso"+course[j].id+"'><p style='font-size:18px;line-height: 0.4;'>"+course[j].title+"</p></a>";   
             }                
@@ -286,7 +296,7 @@ function loadSingleCategory(){
 }
 
 function loadSingleCourse(){
-
+	goup();
     i = this.id.replace('corso',''); 
     $(".category").html("");
     $(".contenitore-dinamico").html("");
@@ -348,6 +358,7 @@ function loadSingleCourse(){
 
 
 function loadAlphabetical(){
+	goup();
     $( ".scorrimentoslide" ).fadeOut( "slow" );
     $(".contenitore-dinamico").html("");
     $(".contenitoredestra").html("<div class=\"headerline\">All courses</div><div class=\"contenitore-dinamico\"></div>");
@@ -380,12 +391,9 @@ function loadAlphabetical(){
 
 function loadbyLevel(){
     $( ".scorrimentoslide" ).fadeOut( "slow" );
-    $(".contenitore-dinamico").html("");
-    $(".contenitoredestra").html("<div class=\"headerline\">All courses</div><div class=\"contenitore-dinamico\"></div>");
-     $(".contenitore-dinamico").html( "<button type=\"button\" id=\"allcateg\">Display all categories</button><br><br><button type=\"button\" id=\"alphabetical\">Display courses by Alphabetical Order</button><br><br><br><style>.contenitore-dinamico{    text-align: center;}</style>");
+    $(".contenitoredestra").html("<div class=\"headerline\">All courses</div><center><button type=\"button\" id=\"allcateg\">Display all categories</button><br><br><button type=\"button\" id=\"alphabetical\">Display courses by Alphabetical Order</button></center><br><br><br><style>.contenitore-dinamico{    text-align: center;}</style><div class=\"contenitore-dinamico\"></div>");
     $(document).on("click", "#allcateg", loadCategories);
     $(document).on("click", "#alphabetical", loadAlphabetical);
-    var el="";
     $.ajax({
         method: "POST",
         //dataType: "json", //type of data
@@ -394,7 +402,7 @@ function loadbyLevel(){
         success: function(response) {
             var course=JSON.parse(response);
             var livello=1;
-            el="<p style='font-size:22px;line-height: 1.3;color:#56348d;'>Level "+livello+"</p>";
+            var el="<p style='font-size:22px;line-height: 1.3;color:#56348d;'>Level "+livello+"</p>";
 			for(var j=0;j<course.length;j++){
                 $(document).on("click", "#corso"+course[j].title, loadSingleCourse);
                 if (course[j].level!=livello){
@@ -404,7 +412,7 @@ function loadbyLevel(){
                 $(document).on("click", "#corso"+course[j].id, loadSingleCourse);
                 el+="<a href='#' id='corso"+course[j].id+"'><p style='font-size:18px;line-height: 1;'>"+course[j].title+"</p></a>";   
             }
-             $(".contenitore-dinamico").append(el);
+             $(".contenitore-dinamico").html(el);
             
         },
         error: function(request,error)
