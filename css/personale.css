@@ -2,13 +2,10 @@
 display: none;
 }
   
-  
   /* Rendi fluido il container */
 .fb_iframe_widget, .fb_iframe_widget span, .fb_iframe_widget span iframe[style] {
 width: 100% !important;
 }
-
-
 
 #map-canvas{
       position: relative;
@@ -236,7 +233,7 @@ background-image: url(http://guifff.com/wp-content/uploads/45_dribbble-twitter.g
     margin-left: 10%;
     font-size: 20px;
     padding-top: 16px;
-    width: 300px;
+    width: 23%;
     height: 50px;
     text-align: center;
 }
@@ -295,7 +292,7 @@ background-image: url(http://guifff.com/wp-content/uploads/45_dribbble-twitter.g
     top: 70px;
             }
 
-@media only screen and (max-width : 599px) {
+@media only screen and (max-width : 750px) {
 
     .menusinistra{
          display: none;
