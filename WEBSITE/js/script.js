@@ -75,7 +75,6 @@ function loadLocation(){
 }
 
 function loadContact(){
-    
     $(document).on("click", "#location", loadLocation);
     $(".contenitoredestra").html(
             "<div class=\"headerline\"><a href=\"#back\" id=\"location\">Location & Overall Scheduling </a><<<br>Contact us</div> "+
