@@ -258,8 +258,7 @@ function loadSingleCategory(){
             success: function(response) {
                 var coursecategory=JSON.parse(response);
                 i=i-1;
-                var el="";
-                el="<style>.contenitore-dinamico{text-align: left;}.sfondocategorie{background-image: url("+coursecategory[i].sfondo+");    background-position: top; width:98%; height: 900px; margin-top: 0px; margin-left: 0px; margin-right: 0px;  background-repeat: no-repeat;opacity: 0.3;position: relative;}</style><div class='contenitore-dinamico'><div class='sfondocategorie'></div><div class='categoria' id='i"+coursecategory[i].id+"'><div class='desc'><style>.desc{width:98%;color:#000000;text-align: center; margin: 0px}</style><b><p style='font-size:45px'>"+coursecategory[i].title+"</b></p><br><br><p style='font-size:18px'>"+coursecategory[i].desc+"</p></div></div>";   
+                var el="<style>.contenitore-dinamico{text-align: left;}.sfondocategorie{background-image: url("+coursecategory[i].sfondo+");    background-position: top; width:98%; height: 900px; margin-top: 0px; margin-left: 0px; margin-right: 0px;  background-repeat: no-repeat;opacity: 0.3;position: relative;}</style><div class='contenitore-dinamico'><div class='sfondocategorie'></div><div class='categoria' id='i"+coursecategory[i].id+"'><div class='elenco'><style>.desc{width:98%;color:#000000;text-align: center; margin: 0px}</style><b><p style='font-size:45px'>"+coursecategory[i].title+"</b></p><br><br><p style='font-size:18px'>"+coursecategory[i].desc+"</p></div></div>";   
                $(".contenitoredestra").append(el);
 
             },
@@ -272,18 +271,19 @@ function loadSingleCategory(){
 
     $.ajax({
         method: "POST",
+            async: false,
         //dataType: "json", //type of data
         crossDomain: true, //localhost purposes
         url: "http://hyp.altervista.org/query/cate_has_courses.php", //Relative or absolute path to file.php file
         data: {id: i}, //passo i come parametro
         success: function(response) {
+            var ee="";
             var course=JSON.parse(response);
-            var el="";
 			for(var j=0;j<course.length;j++){
                 $(document).on("click", "#corso"+course[j].id, loadSingleCourse);
                 el+="<br><a href='#' id='corso"+course[j].id+"'><p style='font-size:18px;line-height: 0.4;'>"+course[j].title+"</p></a>";   
             }                
-                $(".desc").append(el);           
+                $(".elenco").append(el); 
         },
         error: function(request,error)
         {
